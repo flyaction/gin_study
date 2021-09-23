@@ -38,7 +38,6 @@ func main()  {
 
 	r.GET("/bookable", func(c *gin.Context) {
 		var b Booking
-		//v10不是这样搞了
 		if err := c.ShouldBind(&b);err != nil{
 			c.JSON(500,gin.H{"error":err.Error()})
 			return
